@@ -20,8 +20,7 @@ enum WeightType {
 
 		switch self {
 			case .pseudoEuclidean:
-				return sqrt((dxSquared + dySquared) / 10.0)
-					.rounded(FloatingPointRoundingRule.up)
+				return sqrt((dxSquared + dySquared) / 10.0).rounded(.up)
 			case .euclidean:
 				return sqrt(dxSquared + dySquared)
 		}
