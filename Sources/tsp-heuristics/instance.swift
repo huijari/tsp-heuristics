@@ -10,9 +10,9 @@ class Node {
 	}
 }
 
-enum WeightType {
-	case pseudoEuclidean
-	case euclidean
+enum WeightType: String {
+	case pseudoEuclidean = "ATT"
+	case euclidean = "EUC_2D"
 
 	func distance(_ a: Node, _ b: Node) -> Float {
 		let dxSquared = pow(Float(a.x - b.x), 2)
