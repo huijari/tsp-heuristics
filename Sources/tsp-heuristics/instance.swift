@@ -44,17 +44,17 @@ struct Instance {
 
 		while line != "EOF" {
 			if meta {
-					if line.starts(with: "NODE_COORD_SECTION") { meta = false }
-					if line.starts(with: "NAME") {
-						instance.name = value(from: line)
-					}
-					if line.starts(with: "DIMENSION") {
-						instance.dimension = Int(value(from: line))!
-					}
-					if line.starts(with: "EDGE_WEIGHT_TYPE") {
-						let type = value(from: line)
-						instance.edgeWeightType = WeightType(rawValue: type)!
-					}
+				if line.starts(with: "NODE_COORD_SECTION") { meta = false }
+				if line.starts(with: "NAME") {
+					instance.name = value(from: line)
+				}
+				if line.starts(with: "DIMENSION") {
+					instance.dimension = Int(value(from: line))!
+				}
+				if line.starts(with: "EDGE_WEIGHT_TYPE") {
+					let type = value(from: line)
+					instance.edgeWeightType = WeightType(rawValue: type)!
+				}
 			} else {
 				let components = line.split(separator: " ")
 				let x = Int(components[1])!
