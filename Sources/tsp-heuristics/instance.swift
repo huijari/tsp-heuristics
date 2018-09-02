@@ -14,9 +14,9 @@ enum WeightType: String {
 	case pseudoEuclidean = "ATT"
 	case euclidean = "EUC_2D"
 
-	func distance(_ a: Node, _ b: Node) -> Float {
-		let dxSquared = pow(Float(a.x - b.x), 2)
-		let dySquared = pow(Float(a.y - b.y), 2)
+	func distance(_ a: Node, _ b: Node) -> Double {
+		let dxSquared = pow(Double(a.x - b.x), 2)
+		let dySquared = pow(Double(a.y - b.y), 2)
 
 		switch self {
 			case .pseudoEuclidean:
@@ -57,8 +57,8 @@ struct Instance {
 				}
 			} else {
 				let components = line.split(separator: " ")
-				let x = Int(components[1])!
-				let y = Int(components[2])!
+				let x = Int(Float(components[1])!)
+				let y = Int(Float(components[2])!)
 				instance.nodes.append(Node(x: x, y: y))
 			}
 
