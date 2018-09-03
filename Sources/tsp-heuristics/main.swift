@@ -1,5 +1,9 @@
-import Glibc
 import Foundation 
+#if os(Linux)
+	import Glibc
+#else
+	import Darwin	
+#endif
 
 if CommandLine.arguments.count < 2 {
 	print("Usage: \(CommandLine.arguments[0]) solver")
