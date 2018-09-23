@@ -1,3 +1,3 @@
 protocol Solver {
-	func solve(instance: Instance) -> Double
+	func solve(instance: Instance) -> Solution
 }

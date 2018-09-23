@@ -1,11 +1,12 @@
 class NearestNeighbour: Solver {
-	func solve(instance: Instance) -> Double {
+	func solve(instance: Instance) -> Solution {
 		func distance(_ from: Node, _ to: Node) -> Double {
 			return instance.edgeWeightType.distance(from, to)
 		}
 
 		var cost = 0.0
 		var visited = Array(repeating: false, count: instance.nodes.count)
+		var route: [Node] = []
 
 		var actual = 0
 		while visited.contains(false) {
@@ -25,10 +26,12 @@ class NearestNeighbour: Solver {
 			}
 
 			cost += minimumStep!
-			visited[minimum!] = true
 			actual = minimum!
+			visited[actual] = true
+			route.append(instance.nodes[actual])
 		}
+		cost += distance(instance.nodes[actual], instance.nodes[0])
 
-		return cost + distance(instance.nodes[actual], instance.nodes[0])
+		return Solution(route: route, cost: cost)
 	}
 }

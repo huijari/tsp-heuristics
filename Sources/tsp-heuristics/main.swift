@@ -19,4 +19,5 @@ switch CommandLine.arguments[1] {
 }
 
 let instance = Instance.readFromConsole()
-print(Int(solver!.solve(instance: instance)))
+let solution = solver!.solve(instance: instance)
+print(Int(solution.cost))
