@@ -27,7 +27,7 @@ enum WeightType: String {
 	}
 }
 
-struct Instance {
+class Instance {
 	var name = ""
 	var dimension = 0
 	var edgeWeightType = WeightType.euclidean
@@ -39,7 +39,7 @@ struct Instance {
 		}
 
 		var meta = true
-		var instance = Instance()
+		let instance = Instance()
 		var line = readLine() ?? "EOF"
 
 		while line != "EOF" {
