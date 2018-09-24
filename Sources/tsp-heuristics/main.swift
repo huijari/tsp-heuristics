@@ -6,7 +6,7 @@ import Foundation
 #endif
 
 if CommandLine.arguments.count < 2 {
-	print("Usage: \(CommandLine.arguments[0]) solver")
+	print("Usage: \(CommandLine.arguments[0]) solver [optimizer]")
 	exit(1)
 }
 
