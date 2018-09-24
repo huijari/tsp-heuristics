@@ -20,4 +20,17 @@ switch CommandLine.arguments[1] {
 
 let instance = Instance.readFromConsole()
 let solution = solver!.solve(instance: instance)
-print(Int(solution.cost))
+print("cost: \(Int(solution.cost))")
+
+if CommandLine.arguments.count > 2 {
+	let optimizer: Optimizer?
+	switch CommandLine.arguments[2] {
+		case "2opt": optimizer = Vns2opt()
+		default:
+			print("Invalid optimizer")
+			exit(1)	
+	}
+	let optimizedSolution = optimizer!.optimize(instance: instance, solution: solution)
+	print("optimized cost: \(Int(optimizedSolution.cost))")
+}
+
