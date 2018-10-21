@@ -18,5 +18,5 @@ swift build -c release
 The nearest neighbour is a greedy heuristic that chooses the nearest node to add to the solution, starts at the first node of the input.
 
 ## Optimizers
-### 2opt - Variable Neighborhood Search (with 2-opt function)
+### vns - Variable Neighborhood Search (with 2-opt function)
 The main idea behind it is to take a route that crosses over itself and reorder it so that it does not. It will compare every possible valid combination of the swapping mechanism.

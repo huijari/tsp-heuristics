@@ -25,7 +25,7 @@ print("cost: \(Int(solution.cost))")
 if CommandLine.arguments.count > 2 {
 	let optimizer: Optimizer?
 	switch CommandLine.arguments[2] {
-		case "2opt": optimizer = Vns2opt()
+		case "vns": optimizer = Vns2opt()
 		default:
 			print("Invalid optimizer")
 			exit(1)	
