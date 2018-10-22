@@ -20,3 +20,6 @@ The nearest neighbour is a greedy heuristic that chooses the nearest node to add
 ## Optimizers
 ### vns - Variable Neighborhood Search (with 2-opt function)
 The main idea behind it is to take a route that crosses over itself and reorder it so that it does not. It will compare every possible valid combination of the swapping mechanism.
+
+### tabu - Tabu Search (with 2-opt function)
+Tabu search enhances the performance of local search by relaxing its basic rule. First, at each step worsening moves can be accepted if no improving move is available (like when the search is stuck at a strict local minimum). In addition, prohibitions (henceforth the term tabu) are introduced to discourage the search from coming back to previously-visited solutions.
