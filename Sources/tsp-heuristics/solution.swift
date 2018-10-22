@@ -1,4 +1,4 @@
-class Solution {
+class Solution : Equatable {
 	let route: [Node]
 	let cost: Double
 
@@ -16,5 +16,14 @@ class Solution {
 		}
 		cost += weightType.distance(route[route.count - 1], route[0])
 		self.cost = cost
+	}
+
+	static func == (left: Solution, right: Solution) -> Bool {
+		for index in 0..<left.route.count {
+			if left.route[index] != right.route[index] {
+				return false
+			}
+		}
+		return true
 	}
 }

@@ -1,12 +1,16 @@
 import Glibc
 
-class Node {
+class Node : Equatable {
 	let x: Int
 	let y: Int
 
 	init(x: Int, y: Int) {
 		self.x = x
 		self.y = y
+	}
+
+	static func == (left: Node, right: Node) -> Bool {
+		return left.x == right.x && left.y == right.y
 	}
 }
 
