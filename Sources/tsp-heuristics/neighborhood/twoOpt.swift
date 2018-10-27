@@ -3,7 +3,7 @@ class TwoOpt {
 		_ actual: Solution,
 		visited: Set<Solution>? = nil,
 		weightType: WeightType
-	) -> Solution {
+		) -> Solution {
 		var best = Solution(route: [], cost: Double.infinity)
 
 		for i in 1..<actual.route.count {
@@ -25,8 +25,8 @@ class TwoOpt {
 	static func swap(route: [Node], from: Int, to: Int) -> [Node] {
 		return Array(
 			route.prefix(from) +
-			route.dropFirst(from).prefix(to - from + 1).reversed() +
-			route.suffix(from: to + 1)
+				route.dropFirst(from).prefix(to - from + 1).reversed() +
+				route.suffix(from: to + 1)
 		)
 	}
 }

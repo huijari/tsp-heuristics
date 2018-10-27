@@ -1,8 +1,8 @@
 import Foundation 
 #if os(Linux)
-	import Glibc
+import Glibc
 #else
-	import Darwin	
+import Darwin	
 #endif
 
 if CommandLine.arguments.count < 2 {

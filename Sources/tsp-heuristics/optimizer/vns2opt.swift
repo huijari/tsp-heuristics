@@ -7,7 +7,7 @@ class Vns2opt: Optimizer {
 			actual = next
 			next = TwoOpt.search(actual, weightType: instance.edgeWeightType)
 		}
-		while next.cost < actual.cost
+			while next.cost < actual.cost
 
 		return actual
 	}
