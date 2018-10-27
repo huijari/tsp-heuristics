@@ -1,6 +1,10 @@
 class TwoOpt {
-	static func search(_ actual: Solution, weightType: WeightType) -> Solution {
-		var best = actual
+	static func search(
+		_ actual: Solution,
+		visited: Set<Solution>? = nil,
+		weightType: WeightType
+	) -> Solution {
+		var best = Solution(route: [], cost: Double.infinity)
 
 		for i in 1..<actual.route.count {
 			for j in (i + 1)..<actual.route.count {
@@ -8,7 +12,8 @@ class TwoOpt {
 					route: swap(route: actual.route, from: i, to: j),
 					weightType: weightType
 				)
-				if mutation.cost < best.cost {
+				let notVisited = visited == nil || !visited!.contains(mutation)
+				if mutation.cost < best.cost && notVisited {
 					best = mutation
 				}
 			}

@@ -26,7 +26,7 @@ if CommandLine.arguments.count > 2 {
 	let optimizer: Optimizer?
 	switch CommandLine.arguments[2] {
 		case "vns": optimizer = Vns2opt()
-		case "tabu": optimizer = Tabu2opt(size: 25, iterations: 100)
+		case "tabu": optimizer = Tabu2opt(iterations: 100)
 		default:
 			print("Invalid optimizer")
 			exit(1)	
