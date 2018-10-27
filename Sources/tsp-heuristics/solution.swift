@@ -1,4 +1,4 @@
-class Solution : Equatable {
+class Solution : Hashable {
 	let route: [Node]
 	let cost: Double
 
@@ -25,5 +25,14 @@ class Solution : Equatable {
 			}
 		}
 		return true
+	}
+
+	var hashValue: Int {
+		var hash = cost.hashValue
+		for node in route {
+			hash ^= node.x.hashValue
+			hash ^= node.y.hashValue
+		}
+		return hash
 	}
 }

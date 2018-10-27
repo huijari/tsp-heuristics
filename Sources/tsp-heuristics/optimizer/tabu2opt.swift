@@ -10,7 +10,7 @@ class Tabu2opt: Optimizer {
 	func optimize(instance: Instance, solution: Solution) -> Solution {
 		var actual = solution
 		var overallBest = solution
-		var visited: [Solution] = Array()
+		var visited: Set<Solution> = Set()
 
 		for _ in 0..<self.iterations {
 			var best = Solution(route: [], cost: Double.infinity)
@@ -32,13 +32,10 @@ class Tabu2opt: Optimizer {
 			}
 
 			actual = best
-			visited.append(best)
+			visited.insert(best)
 
 			if best.cost < overallBest.cost {
 				overallBest = best
-			}
-			if visited.count > self.size {
-				visited.removeFirst()
 			}
 		}
 
