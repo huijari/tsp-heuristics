@@ -14,6 +14,7 @@ let solver: Solver?
 switch CommandLine.arguments[1] {
 	case "nn": solver = NearestNeighbour()
 	case "rand": solver = Random()
+	case "rand-grasp": solver = Grasp(solver: Random(), iterations: 10000)
 	default:
 		print("Invalid solver")
 		exit(1)	
