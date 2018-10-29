@@ -13,6 +13,7 @@ if CommandLine.arguments.count < 2 {
 let solver: Solver?
 switch CommandLine.arguments[1] {
 	case "nn": solver = NearestNeighbour()
+	case "rand": solver = Random()
 	default:
 		print("Invalid solver")
 		exit(1)	
