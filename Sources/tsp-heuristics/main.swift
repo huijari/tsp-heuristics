@@ -15,6 +15,7 @@ switch CommandLine.arguments[1] {
 	case "nn": solver = NearestNeighbour()
 	case "rand": solver = Random()
 	case "rand-grasp": solver = Grasp(solver: Random(), iterations: 10000)
+	case "greedy-grasp": solver = Grasp(solver: RandomizedGreedy(alpha: 0.5), iterations: 100)
 	default:
 		print("Invalid solver")
 		exit(1)	
