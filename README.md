@@ -29,3 +29,9 @@ The main idea behind it is to take a route that crosses over itself and reorder 
 
 ### tabu - Tabu Search (with 2-opt function)
 Tabu search enhances the performance of local search by relaxing its basic rule. First, at each step worsening moves can be accepted if no improving move is available (like when the search is stuck at a strict local minimum). In addition, prohibitions (henceforth the term tabu) are introduced to discourage the search from coming back to previously-visited solutions.
+
+### ils - Iterated Local Search (with 2-opt function)
+Local search methods can get stuck in a local minimum, where no improving neighbors are available.
+Iterated Local Search is based on building a sequence of locally optimal solutions by:
+1. perturbing the current local minimum, in this case a 2-opt in a random range;
+2. applying local search after starting from the modified solution.

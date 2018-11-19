@@ -30,6 +30,7 @@ if CommandLine.arguments.count > 2 {
 	switch CommandLine.arguments[2] {
 		case "vns": optimizer = Vns2opt()
 		case "tabu": optimizer = Tabu2opt(iterations: 100)
+		case "ils": optimizer = Ils2opt(iterations: 1000)
 		default:
 			print("Invalid optimizer")
 			exit(1)	
