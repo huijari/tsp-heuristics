@@ -4,7 +4,7 @@
 The program expects the solver name and an optional optimizer as arguments, and will read the data from the standard input.
 Example:
 ```sh
-tsp-heuristics nn 2opt < Data/att48.tsp
+tsp-heuristics nn ils < Data/att48.tsp
 ```
 
 ## Build
